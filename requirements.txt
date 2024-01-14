@@ -1,0 +1,139 @@
+# for generate (gradio server) and finetune
+datasets==2.13.0
+sentencepiece==0.1.99
+gradio==3.49.0
+huggingface_hub==0.19.4
+appdirs==1.4.4
+fire==0.5.0
+docutils==0.20.1
+torch==2.1.0
+evaluate==0.4.0
+rouge_score==0.1.2
+sacrebleu==2.3.1
+scikit-learn==1.2.2
+# optional (need to uncomment code in gradio_runner.py for import of better_profanity)
+# alt-profanity-check==1.2.2
+# better-profanity==0.7.0
+numpy==1.24.3
+pandas==2.0.2
+matplotlib==3.7.1
+loralib==0.1.1
+bitsandbytes==0.41.3
+accelerate==0.25.0
+peft==0.7.1
+transformers==4.36.2
+tokenizers==0.15.0
+APScheduler==3.10.1
+
+# optional for generate
+pynvml==11.5.0
+psutil==5.9.5
+boto3==1.26.101
+botocore==1.29.101
+
+# optional for finetune
+tensorboard==2.13.0
+neptune==1.2.0
+
+# for gradio client
+gradio_client==0.6.1
+beautifulsoup4==4.12.2
+markdown==3.4.3
+
+# data and testing
+pytest==7.2.2
+pytest-xdist==3.2.1
+nltk==3.8.1
+textstat==0.7.3
+# pandoc==2.3
+#pypandoc==1.11; sys_platform == "darwin" and platform_machine == "arm64"
+pypandoc_binary==1.11; platform_machine == "x86_64"
+#pypandoc_binary==1.11; sys_platform == "win32"
+#python-magic-bin==0.4.14; sys_platform == "win32"
+openpyxl==3.1.2
+lm_dataformat==0.0.20
+bioc==2.0
+
+# falcon
+einops==0.6.1
+instructorembedding==1.0.1
+
+# for gpt4all .env file, but avoid worrying about imports
+python-dotenv==1.0.0
+
+text-generation==0.6.0
+# for tokenization when don't have HF tokenizer
+tiktoken==0.4.0
+
+requests>=2.31.0
+urllib3>=1.26.16
+filelock>=3.12.2
+joblib>=1.3.1
+tqdm>=4.65.0
+tabulate>=0.9.0
+packaging>=23.1
+
+
+# optional for chat with PDF
+langchain==0.0.321
+langchain_experimental==0.0.33
+pypdf==3.14.0
+# avoid textract, requires old six
+#textract==1.6.5
+pypdfium2==4.19.0
+
+# for HF embeddings
+sentence_transformers==2.2.2
+
+# optional: for OpenAI endpoint or embeddings (requires key)
+openai==0.28.1
+replicate==0.10.0
+
+# local vector db
+chromadb==0.4.13
+
+# chroma migration
+chroma-migrate==0.0.7
+duckdb==0.7.1
+https://h2o-release.s3.amazonaws.com/h2ogpt/chromamigdb-0.3.25-py3-none-any.whl
+https://h2o-release.s3.amazonaws.com/h2ogpt/hnswmiglib-0.7.0.tgz
+
+# server vector db
+#pymilvus==2.2.8
+
+# weak url support, if can't install opencv etc. If comment-in this one, then comment-out unstructured[local-inference]==0.6.6
+# unstructured==0.8.1
+
+# strong support for images
+# Requires on Ubuntu: sudo apt-get install libmagic-dev poppler-utils tesseract-ocr libtesseract-dev libreoffice
+unstructured[local-inference]==0.9.0
+#pdf2image==1.16.3
+#pytesseract==0.3.10
+pillow==9.5.0
+posthog==3.0.1
+
+pdfminer.six==20221105
+urllib3
+requests_file
+
+#pdf2image==1.16.3
+#pytesseract==0.3.10
+tabulate==0.9.0
+# FYI pandoc already part of requirements.txt
+
+# JSONLoader, but makes some trouble for some users
+# TRY: apt-get install autoconf libtool
+# unclear what happens on windows/mac for now
+jq==1.4.1; platform_machine == "x86_64"
+
+# to check licenses
+# Run: pip-licenses|grep -v 'BSD\|Apache\|MIT'
+pip-licenses==4.3.0
+
+# weaviate vector db
+weaviate-client==3.22.1
+
+faiss-gpu==1.7.2
+arxiv==1.4.8
+#vllm==0.2.2
+openllm

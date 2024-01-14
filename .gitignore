@@ -1,0 +1,26 @@
+__pycache__/
+checkpoint**
+auth*
+save*
+sources_dir
+db_dir_UserData
+db_nonusers
+locks
+offline_folder
+temp_path_to_doc1
+flagged_data_points
+user_path
+users
+build
+dist
+.cache
+.local
+.bash_history
+Dockerfile-runner.dockerfile
+Dockerfile_deps
+
+# IDEs
+.idea/
+
+# virtual envs
+venv
