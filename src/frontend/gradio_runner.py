@@ -148,7 +148,7 @@ def go_gradio(**kwargs):
     description = None
     description_bottom = ""
     task_info_md = ''
-    css_code = get_css(kwargs)
+    css_code = get_css()
 
     if kwargs['gradio_offline_level'] >= 0:
         # avoid GoogleFont that pulls from internet
@@ -3365,7 +3365,7 @@ def go_gradio(**kwargs):
             chat_state1 = args_list[-1]
             short_chats = list(chat_state1.keys())
             if len(chat_list_not_none) > 0:
-                # make short_chat key from only first history, based upon question that is same anyways
+                # make short_chat key from only first history, based upon question that is same anyway
                 chat_first = chat_list_not_none[0]
                 short_chat = get_short_chat(chat_first, short_chats)
                 if short_chat:

@@ -1,4 +1,4 @@
-def get_css(kwargs) -> str:
+def get_css() -> str:
     css_code = """footer {visibility: hidden}"""
 
     css_code += make_css_base()

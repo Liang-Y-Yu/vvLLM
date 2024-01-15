@@ -12,6 +12,7 @@ import os, glob
 
 BROKEN_UNICODE = b'\\ufffd'.decode('unicode_escape')
 
+
 class CustomExLlamaTokenizer(ExLlamaTokenizer):
     def __call__(self, text, *args, **kwargs):
         return dict(input_ids=self.encode(text))

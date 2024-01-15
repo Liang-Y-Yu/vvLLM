@@ -1010,7 +1010,8 @@ def main(
 
     other_model_state_defaults = dict(load_8bit=load_8bit, load_4bit=load_4bit, low_bit_mode=low_bit_mode,
                                       load_half=load_half,
-                                      load_gptq=load_gptq, load_awq=load_awq, load_exllama=load_exllama, use_safetensors=use_safetensors,
+                                      load_gptq=load_gptq, load_awq=load_awq, load_exllama=load_exllama,
+                                      use_safetensors=use_safetensors,
                                       revision=revision, use_gpu_id=use_gpu_id, gpu_id=gpu_id,
                                       compile_model=compile_model,
                                       use_cache=use_cache,
@@ -2607,7 +2608,7 @@ def evaluate(
                         sources = res_dict['sources']
                     else:
                         # go with old text if last call didn't work
-                        e = job.future._exception
+                        e = job.future._exception  # type: ignore
                         if e is not None:
                             stre = str(e)
                             strex = ''.join(traceback.format_tb(e.__traceback__))
@@ -2800,8 +2801,8 @@ def evaluate(
                 always_use_streaming_method = True  # to deal with complex parsing of prompt vs. generation due to odd tokenizing
                 if stream_output or always_use_streaming_method:
                     skip_prompt = True  # True means first output excludes prompt
-                    streamer = TextIteratorStreamer(tokenizer, skip_prompt=skip_prompt, block=False,
-                                                    **decoder_kwargs)
+                    streamer = GPTTextIteratorStreamer(tokenizer, skip_prompt=skip_prompt, block=False,
+                                                       **decoder_kwargs)
                     gen_kwargs.update(dict(streamer=streamer))
                     target = wrapped_partial(generate_with_exceptions, model.generate,
                                              raise_generate_gpu_exceptions=raise_generate_gpu_exceptions,
@@ -2900,7 +2901,7 @@ def get_cutoffs(memory_restriction_level, for_context=False, model_max_length=20
     return cutoff_len, output_smallest, max_length_tokenize, max_prompt_length
 
 
-class TextIteratorStreamer(TextIteratorStreamer):
+class GPTTextIteratorStreamer(TextIteratorStreamer):
     """
     normally, timeout required for now to handle exceptions, else get()
     TextIteratorStreamer, loop over block to handle

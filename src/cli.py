@@ -138,7 +138,8 @@ def run_cli(  # for local function:
                     if not stream_output:
                         print(res)
                     else:
-                        # then stream output for gradio that has full output each generation, so need here to show only new chars
+                        # then stream output for gradio that has full output each generation, so need here to show
+                        # only new chars
                         diff = res[len(res_old):]
                         print(diff, end='', flush=True)
                         res_old = res

@@ -189,8 +189,7 @@ def run_eval(  # for local function:
                           **get_kwargs(evaluate, exclude_names=['model_state',
                                                                 'my_db_state',
                                                                 'selection_docs_state',
-                                                                'requests_state']
-                                                               + eval_func_param_names,
+                                                                'requests_state'] + eval_func_param_names,
                                        **locals()))
         else:
             assert eval_prompts_only_num > 0
@@ -270,8 +269,7 @@ def run_eval(  # for local function:
                     score_dump.append(ex + [prompt, res, score])
                     # dump every score in case abort
                     df_scores = pd.DataFrame(score_dump,
-                                             columns=eval_func_param_names +
-                                                     eval_extra_columns)
+                                             columns=eval_func_param_names + eval_extra_columns)
                     df_scores.to_parquet(eval_out_filename, index=False)
                     # plot histogram so far
                     plt.figure(figsize=(10, 10))

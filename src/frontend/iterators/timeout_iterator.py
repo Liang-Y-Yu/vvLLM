@@ -7,7 +7,8 @@ import traceback
 class TimeoutIterator:
     """
     Wrapper class to add timeout feature to synchronous iterators
-    - timeout: timeout for next(). Default=ZERO_TIMEOUT i.e. no timeout or blocking calls to next. Updated using set_timeout() 
+    - timeout: timeout for next(). Default=ZERO_TIMEOUT i.e. no timeout or blocking calls to next.
+               Updated using set_timeout()
     - sentinel: the object returned by iterator when timeout happens
     - reset_on_next: if set to True, timeout is reset to the value of ZERO_TIMEOUT on each iteration
 

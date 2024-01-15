@@ -82,7 +82,6 @@ class SoftTheme(Soft):
         )
 
 
-
 def get_simple_title(title, description):
     return f"""{description}<h1 align="center"> {title}</h1>"""
 

@@ -5,7 +5,7 @@ If a question does not make any sense, or is not factually coherent, explain why
 If you don't know the answer to a question, please don't share false information.
 """
 CUDA_VISIBLE_DEVICES=0,1 GRADIO_SERVER_PORT=8089 TOKENIZERS_PARALLELISM=False HF_DATASETS_OFFLINE=1 TRANSFORMERS_OFFLINE=1 python generate.py \
-    --auth="[('liang','123456')]" \
+    --auth="[('guest','guest')]" \
     --base_model=TheBloke/Llama-2-7b-Chat-AWQ --load_awq="model" --revision="main" \
     --max_seq_len=4096 --use_safetensors=True --prompt_type=llama2 \
     --score_model=None --save_dir='save7b_awq' --langchain_modes="['UserData','MyData']" \

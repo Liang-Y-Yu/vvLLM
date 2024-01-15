@@ -1006,9 +1006,9 @@ def get_llm(use_openai_model=False,
 
         if stream_output:
             skip_prompt = only_new_text
-            from src.gen import TextIteratorStreamer
+            from src.gen import GPTTextIteratorStreamer
             decoder_kwargs = {}
-            streamer = TextIteratorStreamer(tokenizer, skip_prompt=skip_prompt, block=False, **decoder_kwargs)
+            streamer = GPTTextIteratorStreamer(tokenizer, skip_prompt=skip_prompt, block=False, **decoder_kwargs)
             gen_kwargs.update(dict(streamer=streamer))
         else:
             streamer = None

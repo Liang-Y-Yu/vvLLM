@@ -35,7 +35,6 @@ def make_chatbots(output_label0, output_label0_model2, **kwargs):
     if kwargs['model_lock_columns'] is None:
         kwargs['model_lock_columns'] = 3
 
-    ncols = kwargs['model_lock_columns']
     if kwargs['model_states'] == 0:
         nrows = 0
     else:

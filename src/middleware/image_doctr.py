@@ -7,7 +7,6 @@ Loader that uses DocTR OCR models to extract text from images
 """
 from typing import List, Union, Any, Tuple, Optional
 
-import requests
 from langchain.docstore.document import Document
 from langchain.document_loaders import ImageCaptionLoader
 import numpy as np

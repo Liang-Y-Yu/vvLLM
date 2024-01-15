@@ -52,11 +52,11 @@ class GradioClient(Client):
             setattr(self, k, v)
 
     def submit(
-        self,
-        *args,
-        api_name: str | None = None,
-        fn_index: int | None = None,
-        result_callbacks: Callable | list[Callable] | None = None,
+            self,
+            *args,
+            api_name: str | None = None,
+            fn_index: int | None = None,
+            result_callbacks: Callable | list[Callable] | None = None,
     ) -> Job:
         # Note predict calls submit
         try:
@@ -69,14 +69,15 @@ class GradioClient(Client):
             job = super().submit(*args, api_name=api_name, fn_index=fn_index)
 
         # see if immediately failed
-        e = job.future._exception
+        e = job.future._exception  # type: ignore
         if e is not None:
             print("GR job failed: %s %s" % (str(e), ''.join(traceback.format_tb(e.__traceback__))), flush=True)
             # force reconfig in case only that
             self.refresh_client()
             job = super().submit(*args, api_name=api_name, fn_index=fn_index)
-            e2 = job.future._exception
+            e2 = job.future._exception  # type: ignore
             if e2 is not None:
-                print("GR job failed again: %s\n%s" % (str(e2), ''.join(traceback.format_tb(e2.__traceback__))), flush=True)
+                print("GR job failed again: %s\n%s" % (str(e2), ''.join(traceback.format_tb(e2.__traceback__))),
+                      flush=True)
 
         return job
