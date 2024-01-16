@@ -2,6 +2,11 @@
 
 These instructions are for Ubuntu x86_64.
 
+Steps in this document were verified with the following setting:
+1. Python version 3.10.
+2. CUDA version 12.3.
+3. Ubuntu 22.04.
+
 ## Install:
 
 * First one needs a Python 3.10 environment.
