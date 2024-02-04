@@ -1378,11 +1378,12 @@ def go_gradio(**kwargs):
                                 s3up_btn = gr.Button("S3UP", size='sm')
                                 s3up_text = gr.Textbox(label='S3UP result', interactive=False)
 
-                tos_tab = gr.TabItem("Terms of Service") \
+                tos_tab = gr.TabItem("DISCLAIMERS") \
                     if kwargs['visible_tos_tab'] else gr.Row(visible=False)
                 with tos_tab:
                     description = ""
-                    description += """<p><b> DISCLAIMERS: </b><ul><i><li>The model was trained on The Pile and other data, which may contain objectionable content.  Use at own risk.</i></li>"""
+                    description += """<p><b> DISCLAIMERS: </b><ul><i><li>This Application does not guarantee the accuracy, relevance, timeliness, or completeness of any information retrieved.
+                    The user assumes all responsibility and risk for the use of this Application and the Internet generally.</i></li>"""
                     gr.Markdown(value=description, show_label=False, interactive=False)
 
                 login_tab = gr.TabItem("Login") \

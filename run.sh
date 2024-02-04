@@ -13,7 +13,7 @@ CUDA_VISIBLE_DEVICES=0,1 GRADIO_SERVER_PORT=8089 TOKENIZERS_PARALLELISM=False HF
     --gradio_size=small --share=False --gradio_offline_level=2 \
     --local_files_only=True --height=1100 --visible_system_tab=False --system_prompt="${prompt_sys}" \
     --prompt_query="Do not give me any information about service features that are not mentioned in the PROVIDED CONTEXT. According to only the information in the document sources provided within the context above," \
-    --visible_chat_history_tab=False --visible_login_tab=False --visible_models_tab=True --visible_expert_tab=True --visible_doc_view_tab=True  --visible_doc_track=True \
+    --visible_chat_history_tab=False --visible_login_tab=False --visible_models_tab=True --visible_expert_tab=True --visible_doc_view_tab=True  --visible_doc_track=True --visible_tos_tab=True \
     --enable_pdf_doctr=on --enable_url_upload=True --enable_text_upload=True \
     --top_k_docs=5 --do_sample=True --top_p=0.95 --top_k=40 --repetition_penalty=1.1 \
     --verbose
